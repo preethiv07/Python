@@ -1,0 +1,16 @@
+HOW TO SETUP SQLLITE CONNECTION IN DBEAVER
+
+Download Devart driver for DBeaver setup of sqllite (This is 30 day trial version)
+ https://www.devart.com/odbc/sqlite/download.html
+
+download Sample db for sqllite
+https://www.sqlitetutorial.net/sqlite-sample-database/ 
+SAVE under  C:\sqlite\db
+
+How to setup sqllite in DBbeaver  
+  https://www.devart.com/odbc/sqlite/docs/dbeaver.htm
+
+*use above file with dbeaver instructions to setup a odbc connection
+#Note:Advanced setting in odbc : string type ansi
+
+Follow link and create DB beaver ODBC conenction using database name as in ODBC connection
