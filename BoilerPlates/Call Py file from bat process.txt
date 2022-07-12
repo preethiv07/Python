@@ -1,0 +1,57 @@
+Best workign solution
+https://www.jcchouinard.com/python-automation-using-task-scheduler/
+
+1) do "where python" in cmd and find the .exe location
+2) In task scheduler, under "Program/Script" enter ""C:\Program Files\Python37\python.exe""
+3) Arguments : Porject.py
+start in "C:\PythonProjects\ProjectName\"
+
+Batch script settings
+--creating new project in pycharm will create "activate.bat" file
+
+C:\PythonProjects\{projectname}\venv\Scripts\activate.bat && python C:\PythonProjects\{projectname}\{actualcode.py}
+
+---------------------
+#activate.bat code
+---------------------
+@echo off
+
+set "VIRTUAL_ENV=C:\PythonProjects\ProjectName\venv"
+
+if defined _OLD_VIRTUAL_PROMPT (
+    set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
+) else (
+    if not defined PROMPT (
+        set "PROMPT=$P$G"
+    )
+    if not defined VIRTUAL_ENV_DISABLE_PROMPT (
+        set "_OLD_VIRTUAL_PROMPT=%PROMPT%"
+    )
+)
+if not defined VIRTUAL_ENV_DISABLE_PROMPT (
+    set "ENV_PROMPT="
+    if NOT DEFINED ENV_PROMPT (
+        for %%d in ("%VIRTUAL_ENV%") do set "ENV_PROMPT=(%%~nxd) "
+    )
+    )
+    set "PROMPT=%ENV_PROMPT%%PROMPT%"
+)
+
+REM Don't use () to avoid problems with them in %PATH%
+if defined _OLD_VIRTUAL_PYTHONHOME goto ENDIFVHOME
+    set "_OLD_VIRTUAL_PYTHONHOME=%PYTHONHOME%"
+:ENDIFVHOME
+
+set PYTHONHOME=
+
+REM if defined _OLD_VIRTUAL_PATH (
+if not defined _OLD_VIRTUAL_PATH goto ENDIFVPATH1
+    set "PATH=%_OLD_VIRTUAL_PATH%"
+:ENDIFVPATH1
+REM ) else (
+if defined _OLD_VIRTUAL_PATH goto ENDIFVPATH2
+    set "_OLD_VIRTUAL_PATH=%PATH%"
+:ENDIFVPATH2
+
+set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"
+---------------------------------------------------
